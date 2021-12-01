@@ -17,13 +17,9 @@ export default {
   },
   methods: {
     onSubmitted(postData) {
-      axios
-        .post("https://nuxt-blog-53d65-default-rtdb.firebaseio.com/", {
-          ...postData,
-          updatedDate: new Date(),
-        })
-        .then((result) => console.log(result))
-        .catch((e) => console.log(e));
+      this.$store.dispatch("addPost", postData).then(() => {
+        this.$router.push("/admin");
+      });
     },
   },
 };
