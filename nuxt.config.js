@@ -33,9 +33,13 @@ export default {
       process.env.BASE_URL ||
       "https://nuxt-blog-53d65-default-rtdb.firebaseio.com/",
   },
+  transition: {
+    name: "fade",
+    mode: "out-in",
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ["~assets/styles/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
