@@ -37,6 +37,9 @@ export default {
     name: "fade",
     mode: "out-in",
   },
+  // router: {
+  //   middleware: 'log'
+  // },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~assets/styles/main.css"],
