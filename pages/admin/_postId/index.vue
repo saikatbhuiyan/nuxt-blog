@@ -8,14 +8,16 @@
 
 <script>
 import AdminPostForm from "@/components/Admin/AdminPostForm";
+
 export default {
   layout: "admin",
+  middleware: ["check-auth", "auth"],
   components: {
     AdminPostForm,
   },
   asyncData(context) {
     return context.app.$axios
-      .$get(context.params.postId + ".json")
+      .$get(process.env.baseUrl + "/posts/" + context.params.postId + ".json")
       .then((data) => {
         return {
           loadedPost: { ...data, id: context.params.postId },
